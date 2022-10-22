@@ -24,10 +24,11 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 - Mobile-first workflow
 
 ### What I Learned
+- CSS filter Property
 - More Flexbox
 - Mobile-first workflow seems to be better approach
 - More JavaScript
-- Centering a position absolute element again
+- In this scenario its better to look at the desktop design first than the mobile design and then plan acoordingly
 
 ## Author
 - Website - [Liyan Anajao](https://liyannguyen.github.io/Portfolio)
