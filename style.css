@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+	/* PRIMARY COLORS */
+	--orange: hsl(26, 100%, 55%);
+	--paleOrange: hsl(25, 100%, 94%);
+
+	/* NEUTRAL COLORS */
+	--vdb: hsl(220, 13%, 13%);
+	--dgb: hsl(219, 9%, 45%);
+	--gb: hsl(220, 14%, 75%);
+	--lgb: hsl(223, 64%, 98%);
+	--white: hsl(0, 0%, 100%);
+	--black: hsl(0, 0%, 0%); /*75% opacity for lightbox*/
+
+	font-size: 16px;
+	font-family: 'Kumbh Sans', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* MOBILE FIRST APPROACH */
+nav {
+	display: flex;
+	padding: 1rem;
+	background-color: var(--white);
+}
+
+nav img {
+	display: block;
+	cursor: pointer;
+}
+
+.leftNav {
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.leftNav ul {
+	display: none;
+}
+
+.rightNav {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.rightNav .avatar {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}
+
+.rightNav .avatar:hover {
+	outline: .15rem solid var(--orange);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+}
+
+.productContainer {
+	width: clamp(100%, 375px, 100%);
+	position: relative;
+}
+
+.productContainer img {
+	display: block;
+	width: 100%;
+}
+
+.circle {
+	position: absolute;
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 0;
+	bottom: 0;
+	height: 2.5rem;
+	width: 2.5rem;
+	border-radius: 50%;
+	background-color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: .95rem;
+	cursor: pointer;
+}
+
+.circle.left {
+	left: 1rem;
+}
+
+.circle.right {
+	right: 1rem;
+}
+
+.thumbnailContainer {
+	display: none;
+}
+
+.infoContainer {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.infoContainer>p:first-child {
+	font-size: 0.75rem;
+	color: var(--orange);
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.infoContainer h1 {
+	color: var(--vdb);
+}
+
+.infoContainer .description {
+	color: var(--dgb);
+	line-height: 1.4;
+}
+
+.price {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.price>div:first-child {
+	display: flex;
+	gap: 1rem;
+}
+
+.price h2 {
+	color: var(--vdb);
+}
+
+.price span {
+	color: var(--orange);
+	font-weight: 700;
+	padding: .25rem .5rem;
+	border-radius: .25rem;
+	background-color: var(--paleOrange);
+}
+
+.price div {
+	/* margin-left: auto; */
+	color: var(--gb);
+	font-weight: 700;
+	font-size: .9rem;
+}
+
+.quantifier {
+	padding: 1rem;
+	background: var(--lgb);
+	border-radius: .5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.quantifier p {
+	font-weight: 700;
+	color: var(--vdb);
+}
+
+.quantifier img {
+	display: block;
+	cursor: pointer;
+}
+
+.bottom {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.infoContainer button {
+	padding: 1rem;
+	border-radius: .5rem;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	font-size: 1rem;
+	background-color: var(--orange);
+	color: var(--white);
+	font-weight: 700;
+	font-family: 'Kumbh Sans', sans-serif;
+	cursor: pointer;
+	box-shadow: 0 .5rem 1rem .5rem hsla(26, 100%, 55%, .2);
+	transition: .25s ease;
+}
+
+.infoContainer button:hover {
+	background-color: hsl(26, 100%, 75%);
+}
+
+@media screen and (min-width: 1366px) {
+	body {
+		padding-inline: 10rem;
+	}
+
+	main {
+		flex-direction: row;
+		padding-block: 5rem;
+		justify-content: center;
+	}
+
+	nav {
+		padding: 2rem 0;
+		position: relative;
+		border-bottom: 1px solid var(--gb);
+	}
+
+	#mobileMenu {
+		display: none;
+	}
+
+	.leftNav,
+	.rightNav {
+		gap: 3rem;
+	}
+
+	.leftNav ul {
+		display: flex;
+		list-style: none;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.leftNav ul li {
+		cursor: pointer;
+		color: var(--dgb);
+	}
+
+	.leftNav ul li:hover {
+		color: var(--vdb);
+		text-decoration: underline;
+		text-decoration-color: var(--orange);
+		text-underline-offset: 3rem;
+		text-decoration-thickness: .25rem;
+	}
+
+	.rightNav .avatar {
+		width: 50px;
+		height: 50px;
+	}
+
+	.productContainer {
+		min-width: 500px;
+		max-width: 500px;
+		height: 500px;
+		padding-inline: 2rem;
+	}
+
+	.circle {
+		display: none;
+	}
+
+	.productContainer img {
+		border-radius: 1rem;
+		cursor: pointer;
+	}
+
+	.infoContainer {
+		padding: 3rem 5rem;
+		gap: 1.75rem;
+	}
+
+	.infoContainer>p:first-child {
+		font-size: 1rem;
+	}
+
+	.infoContainer h1 {
+		font-size: 3rem;
+	}
+
+	.thumbnailContainer {
+		display: flex;
+		padding-top: 2rem;
+		justify-content: space-between;
+	}
+
+	.thumbnail {
+		border-radius: .5rem;
+	}
+
+	.thumbnail img {
+		display: block;
+		width: 88px;
+		border-radius: .5rem;
+		transition: .25s ease;
+		cursor: pointer;
+	}
+
+	.thumbnail img:hover {
+		filter: opacity(50%);
+			/*something new learned*/
+	}
+
+	/*something new learned*/
+	.thumbnail.selected {
+		outline: .15rem solid var(--orange);
+	}
+
+	.thumbnail.selected img {
+		filter: opacity(25%); /*something new learned*/
+	}
+
+	.price {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.bottom {
+		flex-direction: row;
+	}
+
+	.quantifier {
+		width: 50%;
+	}
+
+	.bottom button {
+		width: 100%;
+	}
+}
