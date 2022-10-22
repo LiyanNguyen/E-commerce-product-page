@@ -208,6 +208,17 @@ main {
 	background-color: hsl(26, 100%, 75%);
 }
 
+.lightBox {
+	display: none;
+	background-color: hsla(0, 0%, 0%, 0.75);
+	width: 100%;
+	min-height: 100vh;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
 @media screen and (min-width: 1366px) {
 	body {
 		padding-inline: 10rem;
@@ -335,5 +346,32 @@ main {
 
 	.bottom button {
 		width: 100%;
+	}
+
+	.lightBox.active {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.lightBoxImageContainer {
+		width: 500px;
+		height: 500px;
+		position: relative;
+	}
+
+	.lightBoxImageContainer img {
+		display: block;
+		width: 100%;
+		border-radius: 1rem;
+	}
+
+	#closeLightBox {
+		position: absolute;
+		top: -3rem;
+		right: 0;
+		width: 1.5rem;
+		height: 1.5rem;
+		cursor: pointer;
 	}
 }
