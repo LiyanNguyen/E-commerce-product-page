@@ -217,6 +217,7 @@ main {
 	z-index: 1;
 	top: 0;
 	left: 0;
+	user-select: none;
 }
 
 @media screen and (min-width: 1366px) {
@@ -275,6 +276,31 @@ main {
 		max-width: 500px;
 		height: 500px;
 		padding-inline: 2rem;
+	}
+
+	.lightBox.active .circle {
+		display: flex;
+		position: absolute;
+		margin-top: auto;
+		margin-bottom: auto;
+		top: 0;
+		bottom: 0;
+		height: 2.8rem;
+		width: 2.8rem;
+		border-radius: 50%;
+		background-color: var(--white);
+		align-items: center;
+		justify-content: center;
+		padding: 0.95rem;
+		cursor: pointer;
+	}
+
+	.lightBox.active .circle.left {
+		left: -1rem;
+	}
+
+	.lightBox.active .circle.right {
+		right: -1rem;
 	}
 
 	.circle {
